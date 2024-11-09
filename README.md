@@ -31,9 +31,3 @@ Here are some screenshots of the project:
 ![Screenshot 7](demo/image7.png)
 ![Screenshot 8](demo/image8.png)
 
-## Installation
-
-1. **Clone the Repository**
-
-   ```bash
-   git clone https://github.com/abressiddique/mern-ecommerce-website.git
