@@ -22,12 +22,12 @@ A full-stack e-commerce website using the MERN stack (MongoDB, Express.js, React
 
 Here are some screenshots of the project:
 
-![Screenshot 1](demo/image1.png)
-![Screenshot 2](demo/image2.png)
-![Screenshot 3](demo/image3.png)
-![Screenshot 4](demo/image4.png)
-![Screenshot 5](demo/image5.png)
-![Screenshot 6](demo/image6.png)
-![Screenshot 7](demo/image7.png)
-![Screenshot 8](demo/image8.png)
+![Screenshot 1](screenshots/image1.png)
+![Screenshot 2](screenshots/image2.png)
+![Screenshot 3](screenshots/image3.png)
+![Screenshot 4](screenshots/image4.png)
+![Screenshot 5](screenshots/image5.png)
+![Screenshot 6](screenshots/image6.png)
+![Screenshot 7](screenshots/image7.png)
+![Screenshot 8](screenshots/image8.png)
 
