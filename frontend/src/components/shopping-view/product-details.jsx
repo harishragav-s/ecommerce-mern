@@ -24,8 +24,6 @@ function ProductDetailsDialog({ open, setOpen, productDetails }) {
   const { toast } = useToast();
 
   function handleRatingChange(getRating) {
-    console.log(getRating, "getRating");
-
     setRating(getRating);
   }
 
@@ -43,7 +41,6 @@ function ProductDetailsDialog({ open, setOpen, productDetails }) {
             title: `Only ${getQuantity} quantity can be added for this item`,
             variant: "destructive",
           });
-
           return;
         }
       }
@@ -72,6 +69,30 @@ function ProductDetailsDialog({ open, setOpen, productDetails }) {
   }
 
   function handleAddReview() {
+    if (rating === 0) {
+      toast({
+        title: "Please provide a rating before submitting your review.",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    if (reviewMsg.trim() === "") {
+      toast({
+        title: "Please write something in the review message.",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    console.log("Submitting review:", {
+      productId: productDetails?._id,
+      userId: user?.id,
+      userName: user?.userName,
+      reviewMessage: reviewMsg,
+      reviewValue: rating,
+    });
+
     dispatch(
       addReview({
         productId: productDetails?._id,
@@ -81,12 +102,19 @@ function ProductDetailsDialog({ open, setOpen, productDetails }) {
         reviewValue: rating,
       })
     ).then((data) => {
-      if (data.payload.success) {
+      console.log("Review response:", data);
+
+      if (data.payload && data.payload.success) {
         setRating(0);
         setReviewMsg("");
         dispatch(getReviews(productDetails?._id));
         toast({
           title: "Review added successfully!",
+        });
+      } else {
+        toast({
+          title: "Failed to add review. Please try again.",
+          variant: "destructive",
         });
       }
     });
@@ -95,8 +123,6 @@ function ProductDetailsDialog({ open, setOpen, productDetails }) {
   useEffect(() => {
     if (productDetails !== null) dispatch(getReviews(productDetails?._id));
   }, [productDetails]);
-
-  console.log(reviews, "reviews");
 
   const averageReview =
     reviews && reviews.length > 0
@@ -170,7 +196,7 @@ function ProductDetailsDialog({ open, setOpen, productDetails }) {
             <div className="grid gap-6">
               {reviews && reviews.length > 0 ? (
                 reviews.map((reviewItem) => (
-                  <div className="flex gap-4">
+                  <div key={reviewItem._id} className="flex gap-4">
                     <Avatar className="w-10 h-10 border">
                       <AvatarFallback>
                         {reviewItem?.userName[0].toUpperCase()}
