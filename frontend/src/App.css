@@ -1,42 +1,57 @@
+/* 
+  app.css - Custom styles for the React app UI
+  Controls layout, logo animation, card spacing, and colors
+*/
+
+/* Container for the entire app */
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+  max-width: 1280px; 
+  margin: 0 auto;   
+  padding: 2rem;     
+  text-align: center; 
 }
 
+/* Logo styling */
 .logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
+  height: 6em;             
+  padding: 1.5em;         
+  will-change: filter;     
+  transition: filter 300ms; 
 }
+
+/* Glow effect on logo hover */
 .logo:hover {
   filter: drop-shadow(0 0 2em #646cffaa);
 }
+
+/* Different glow color for React logo on hover */
 .logo.react:hover {
   filter: drop-shadow(0 0 2em #61dafbaa);
 }
 
+/* Animation keyframes for spinning logo */
 @keyframes logo-spin {
   from {
-    transform: rotate(0deg);
+    transform: rotate(0deg); /* Start at 0 degrees */
   }
   to {
-    transform: rotate(360deg);
+    transform: rotate(360deg); /* End at full rotation */
   }
 }
 
+/* Animate second link's logo with spinning animation if user allows motion */
 @media (prefers-reduced-motion: no-preference) {
   a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
+    animation: logo-spin infinite 20s linear; /* Spin infinitely every 20 seconds */
   }
 }
 
+/* Card element padding */
 .card {
   padding: 2em;
 }
 
+/* Style for 'read the docs' text */
 .read-the-docs {
-  color: #888;
+  color: #888; /* Light gray text */
 }

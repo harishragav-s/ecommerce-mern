@@ -2,7 +2,7 @@
 
 ## Overview :
 
-A full-stack e-commerce website using the MERN stack (MongoDB, Express.js, React, Node.js). Features include product browsing, user authentication, shopping cart.
+A full-stack e-commerce website using the MERN stack (MongoDB, Express.js, React, Node.js). Features include product browsing, user authentication and shopping cart.
 
 ## Features
 
@@ -10,7 +10,6 @@ A full-stack e-commerce website using the MERN stack (MongoDB, Express.js, React
 - User Authentication
 - Shopping Cart
 - Order Management
-- Admin Dashboard
 
 ## Technologies
 
