@@ -13,7 +13,7 @@ A full-stack e-commerce website using the MERN stack (MongoDB, Express.js, React
 
 ## Technologies
 
-- **Frontend:** React.js, Redux ,Tailwind CSS
+- **Frontend:** React.js (Vite), Redux ,Tailwind CSS
 - **Backend:** Node.js, Express.js, MongoDB
 - **Tools:** Axios, JWT, Bcrypt
 
